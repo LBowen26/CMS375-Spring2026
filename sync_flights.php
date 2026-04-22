@@ -59,14 +59,14 @@ if (!is_array($flights) || count($flights) === 0) {
     die("No arrivals found for MCO yesterday. Try a different date range.");
 }
 
-// Step 3: Insert flights into database
+// Insert flights into database
 // OpenSky flight object fields:
 //   icao24           - transponder hex address
 //   firstSeen        - Unix timestamp of departure
-//   estDepartureAirport - ICAO code of departure airport (can be null)
+//   estDepartureAirport - ICAO code of departure airport (null acceptable)
 //   lastSeen         - Unix timestamp of arrival
-//   estArrivalAirport   - ICAO code of arrival airport (can be null)
-//   callsign         - flight callsign (can be null)
+//   estArrivalAirport   - ICAO code of arrival airport (null acceptable)
+//   callsign         - flight callsign (null acceptable)
 
 $insertedCount = 0;
 $skippedCount  = 0;
@@ -94,7 +94,7 @@ foreach ($flights as $flight) {
     // If no callsign, use the icao24 address as a stand-in
     if ($callsign && strlen($callsign) >= 3 && ctype_alpha(substr($callsign, 0, 3))) {
         $airlineCode = strtoupper(substr($callsign, 0, 3));
-        $airlineName = $airlineCode . " Airlines"; // Simple readable label
+        $airlineName = $airlineCode . " Airlines"; // label
     } else {
         $airlineName = "Unknown (" . strtoupper($icao24) . ")";
     }
