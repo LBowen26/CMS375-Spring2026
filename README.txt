@@ -1,3 +1,3 @@
 --- INSTALLATION INSTRUCTIONS ---
 
-To use this demo, first download the sql file, then initialize it via MySQL Workbench to create the database. Then, download the php/htlml files. Use XAMPP or other similar software to open the index.php file, which acts as the core database traversal site.
+To use this demo, first download the sql file, then initialize it via MySQL Workbench to create the database. Then, download the php/htlml files. Use XAMPP or other similar software to open and run the sync_flights.php file, which will update the database. Then, open the index.php file, which acts as the core database traversal site. If you want to update the table, then run sync_flights.php again.
