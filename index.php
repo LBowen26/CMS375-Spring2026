@@ -79,6 +79,9 @@ th {
 </head>
 <body>
 
+<div style="text-align:right;margin-bottom:4px;">
+    <a href="admin_login.php" style="font-size:0.82em;color:#007BFF;text-decoration:none;"> Admin Login</a>
+</div>
 <h1>Orlando Airport Flight Catalogue</h1>
 
 <div class="updated">
